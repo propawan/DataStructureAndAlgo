@@ -70,6 +70,19 @@ public class GraphHashMapClient {
 //        graph.dfs('A');
 //        graph.connectedComp();
 
+
+//        Cycle Detection in Directed Graph
+//        ( Add vertex 6 if not present )
+//        graph.addEdge(0,1,false,1);
+//        graph.addEdge(1,2,false,1);
+//        graph.addEdge(1,5,false,1);
+//        graph.addEdge(2,3,false,1);
+//        graph.addEdge(4,2,false,1);
+//        graph.addEdge(3,4,false,1);
+//        graph.addEdge(4,5,false,1);
+//        graph.addEdge(5,6,false,1);
+//        System.out.println(graph.hasCycleDirected());
+
 //        For Snake And Ladders
 
 //        int []board = new int[50];

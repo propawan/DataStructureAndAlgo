@@ -248,5 +248,43 @@ public class GraphHashMap<T> {
         }
         return false;
     }
+
+
+    public boolean hasCycleDirected(){
+        Set<T> visited = new HashSet<>();
+        Map<T,Boolean> path = new HashMap<>();
+
+        for (T val:vertexMap.keySet()) {
+            path.put(val,false);
+        }
+
+        for (T val:vertexMap.keySet()) {
+            if(hasCycleDirectedHelper(val,visited,path)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean hasCycleDirectedHelper(T src,Set<T> visited,Map<T,Boolean> path){
+        visited.add(src);
+        path.put(src,true);
+
+        for (Vertex vertex:vertexMap.get(src).neighbours.keySet()) {
+            if(path.get(vertex.value)){
+                return true;
+            }
+            else if(!visited.contains(vertex.value)){
+                boolean foundCycle = hasCycleDirectedHelper(vertex.value,visited,path);
+                if(foundCycle){
+                    return true;
+                }
+            }
+        }
+
+        path.put(src,false);
+        return false;
+    }
 }
 
