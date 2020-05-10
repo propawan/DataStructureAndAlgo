@@ -286,5 +286,31 @@ public class GraphHashMap<T> {
         path.put(src,false);
         return false;
     }
+
+    public boolean isBipartite(){
+        Map<T,Integer> visited = new HashMap<>();
+        for (T val:vertexMap.keySet()) {
+            visited.put(val,0);
+        }
+        LinkedList<T> list = new LinkedList<>(vertexMap.keySet());
+        T start = list.get(0);
+        return isBipartiteHelper(start,start,visited,1);
+    }
+
+    public boolean isBipartiteHelper(T src,T parent,Map<T,Integer> visited,int color){
+        visited.put(src,color);
+        for (Vertex neighbour:vertexMap.get(src).neighbours.keySet()) {
+            if(visited.get(neighbour.value)==0){
+                boolean isIt = isBipartiteHelper(neighbour.value,src,visited,3-visited.get(src));
+                if(!isIt){
+                    return false;
+                }
+            }
+            else if(neighbour.value!=parent&&color==visited.get(neighbour.value)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 

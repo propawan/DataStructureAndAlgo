@@ -3,6 +3,7 @@ package GraphSection;
 public class GraphHashMapClient {
     public static void main(String[] args) {
         GraphHashMap<Integer> graph = new GraphHashMap<>();
+
 //        Topological sort BFS
         graph.addVertex(0);
         graph.addVertex(1);
@@ -82,6 +83,20 @@ public class GraphHashMapClient {
 //        graph.addEdge(4,5,false,1);
 //        graph.addEdge(5,6,false,1);
 //        System.out.println(graph.hasCycleDirected());
+
+
+//        Example Test Case for Bipartite Check
+//        graph.addVertex(1);
+//        graph.addVertex(2);
+//        graph.addVertex(3);
+//        graph.addVertex(4);
+//        graph.addVertex(5);
+//        graph.addEdge(1,2,true,1);
+//        graph.addEdge(2,3,true,1);
+//        graph.addEdge(3,1,true,1);
+//        graph.addEdge(3,4,true,1);
+//        graph.addEdge(4,5,true,1);
+//        System.out.println(graph.isBipartite());
 
 //        For Snake And Ladders
 
