@@ -1,4 +1,4 @@
-package JavaAid;
+package CumulativeSum;
 
 import java.util.Arrays;
 import java.util.Scanner;
