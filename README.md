@@ -5,3 +5,4 @@ This repository contains various algorithms and data structures implemented in j
 - Cumulative Sum
 - Sliding Window
 - Heap
+- Graph
