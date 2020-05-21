@@ -7,3 +7,4 @@ This repository contains various algorithms and data structures implemented in j
 - Heap
 - Graph
 - Segment Tree
+- Hashing problems
