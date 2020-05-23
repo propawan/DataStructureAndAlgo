@@ -29,7 +29,7 @@ public class LongestSubarraySumZero {
             if(map.containsKey(pre)){
                 maxLength = Integer.max(i-map.get(pre),maxLength);
             }
-            else{
+            if(!map.containsKey(pre)){
                 map.put(pre,i);
             }
         }

@@ -31,7 +31,6 @@ public class MinCoinsChange {
     public static int minCoins(int n,int[] coins){
 //        Bottom up Approach
         int[] mem = new int[100];
-        int ans = Integer.MAX_VALUE;
         for (int num = 1; num <= n; num++) {
             mem[num] = Integer.MAX_VALUE;
             for (int i = 0; i < coins.length; i++) {

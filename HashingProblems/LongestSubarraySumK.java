@@ -27,7 +27,7 @@ public class LongestSubarraySumK {
             if(map.containsKey(pre-k)){
                 maxLength = Integer.max(maxLength,i-map.get(pre-k));
             }
-            else{
+            if(!map.containsKey(pre)){
                 map.put(pre,i);
             }
         }
