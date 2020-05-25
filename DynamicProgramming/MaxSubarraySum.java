@@ -2,8 +2,8 @@ package DynamicProgramming;
 
 public class MaxSubarraySum {
     public static void main(String[] args) {
-//        int[] arr = {-3,2,5,-1,6,3,-2,7,-5,2};
-        int[] arr = {-3,-2,-5,-1,-4};
+        int[] arr = {-3,2,5,-1,6,3,-2,7,-5,2};
+//        int[] arr = {-3,-2,-5,-1,-4};
         System.out.println(maxSubArraySumOptimized(arr));
         System.out.println(maxSubArraySum(arr));
     }
@@ -16,9 +16,7 @@ public class MaxSubarraySum {
         for (int i = 1; i < arr.length; i++) {
             mem[i] = mem[i-1] + arr[i];
             maxSum = Math.max(maxSum,mem[i]);
-            if(mem[i]<0){
-                mem[i] = 0;
-            }
+            mem[i] = Math.max(mem[i],0);
         }
 
         return maxSum;
